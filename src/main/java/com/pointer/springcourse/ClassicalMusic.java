@@ -1,7 +1,4 @@
 package com.pointer.springcourse;
-
-
-
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Singleton;
