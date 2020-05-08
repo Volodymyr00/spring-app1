@@ -1,21 +1,26 @@
 package com.pointer.springcourse;
 
-import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
 
-@Component
-public class ClassicalMusic implements Music{
-    private List<String> songs = new ArrayList<>();
-    {
-        songs.add("Symfony #3");
-        songs.add("Symfony #7");
-        songs.add("Symfony #11");
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.inject.Singleton;
+
+@Singleton
+public class ClassicalMusic implements Music {
+@PostConstruct
+    public void doMyInit() {
+        System.out.println("Do my INIT");
+
+    }
+@PreDestroy
+    public void doMyDestroy() {
+        System.out.println("Do my destroy");
     }
 
     @Override
-    public List<String> getSongs() {
-        return songs;
+
+    public String getSong() {
+        return "Amazing Symphony";
     }
 }
